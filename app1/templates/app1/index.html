@@ -1,0 +1,6 @@
+<h1>Effectuer une inscription dans l'une des classes suivantes</h1>
+<ul>
+{% for classe in class_list.all %}
+		<li><a href="{% url 'app1:class_info' classe.id %}">{{classe.c_name}}</a></li>
+{% endfor %}
+</ul>

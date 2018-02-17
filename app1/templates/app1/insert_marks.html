@@ -1,0 +1,9 @@
+<h1>Insertion des note de {{subj}} dans la classe de {{classe.c_name}}</h1>
+<form action="{% url 'app1:registration' classe.id %}" method='POST'>
+{%csrf_token%}
+		{% for stud in classe.students_set.all %}
+			<tr><td>{{stud.stud_mat}}  </td><td>{{stud.stud_name}}  </td><td>{{stud.stud_surname}}  </td><input type='text' name='mark'></tr><br/>
+		{% endfor %}
+	</table>
+	<input type='submit' value="Save">
+</form>

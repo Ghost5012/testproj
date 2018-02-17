@@ -1,0 +1,13 @@
+<h1>Bienvenue dans la classe de {{classe.c_name}}</h1>
+<h2>Qelle action voulez vous effectuer?</h2>
+<ol>
+	<li><a href="{% url 'app1:registration' classe.id %}">Enregistrer les élèves</a></li>
+	<li><p>Enregistrer les notes</p>
+		{% for subj in subj_list %}
+			<ul>
+				<li><a href="{% url 'app1:marks' classe.id subj %}">{{subj}}</a></li>
+			</ul>
+		{% endfor %}
+	</li>
+	<li><a href=#>Visualiser les notes</a></li>
+</ol>

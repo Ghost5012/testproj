@@ -1,0 +1,8 @@
+<h1>Inscription en classe de {{salle.c_name}}</h1>
+<form action={% url 'app1:save' salle.id %} method='POST'>
+{%csrf_token%}
+	Nom: <input type='text' name="nom"><br/>
+	Prenom: <input type='text' name="prenom"><br/>
+	date de nassance: <input type='date' name="dob"></br>
+	<input type='submit' value="Reg">
+</form>
